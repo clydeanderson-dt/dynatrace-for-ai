@@ -84,7 +84,7 @@ cp -r skills/dt-dql-essentials .cursor/skills/
 
 ## Prompts
 
-**Prompts** are reusable task templates for common Dynatrace workflows. Paste them directly into any AI chat, or for VS Code/GitHub Copilot users, copy them into `.github/prompts/` to use as slash commands (e.g. `/troubleshoot-problem`).
+**Prompts** are reusable task templates for common Dynatrace workflows. You can copy them from the `/prompts/` directory and paste them directly into any AI chat. For VS Code/GitHub Copilot users, copy prompts into `.github/prompts/` to use as slash commands (e.g. `/troubleshoot-problem`).
 
 Each prompt references the relevant skills above — load those skills first for best results.
 
