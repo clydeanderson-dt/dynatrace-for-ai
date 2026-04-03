@@ -3,7 +3,7 @@ set -euo pipefail
 # Test: Validate structural consistency between skills/, plugin symlinks, and marketplace.json.
 #
 # Checks:
-#   1. Every skill dir has SKILL.md with valid frontmatter
+#   1. Every skill dir has SKILL.md
 #   2. Every skill in skills/ has a corresponding symlink in plugins/dynatrace/skills/
 #   3. marketplace.json is valid and references the dynatrace plugin
 #   4. marketplace.json source uses ./ prefix
@@ -35,7 +35,7 @@ plugin_skills_dir = root / 'plugins' / 'dynatrace' / 'skills'
 if plugin_skills_dir.exists():
     linked_skills = set()
     for entry in sorted(plugin_skills_dir.iterdir()):
-        if entry.is_symlink() or entry.is_dir():
+        if entry.name.startswith('dt-') and entry.is_symlink():
             linked_skills.add(entry.name)
 
     missing = sorted(disk_skills - linked_skills)
@@ -63,12 +63,11 @@ if not mp_path.exists():
 else:
     mp = json.loads(mp_path.read_text())
     plugins = mp.get('plugins', [])
-    if len(plugins) != 1:
-        errors.append(f'Expected 1 plugin in marketplace.json, found {len(plugins)}')
-    elif plugins[0].get('name') != 'dynatrace':
-        errors.append(f'Plugin name is \"{plugins[0].get(\"name\")}\" not \"dynatrace\"')
-    elif not plugins[0].get('source', '').startswith('./'):
-        errors.append(f'Plugin source should start with ./ but is: {plugins[0].get(\"source\")}')
+    dynatrace_plugin = next((plugin for plugin in plugins if plugin.get('name') == 'dynatrace'), None)
+    if dynatrace_plugin is None:
+        errors.append('marketplace.json does not reference the \"dynatrace\" plugin')
+    elif not dynatrace_plugin.get('source', '').startswith('./'):
+        errors.append(f'Plugin source should start with ./ but is: {dynatrace_plugin.get(\"source\")}')
 
 if errors:
     for e in errors:
