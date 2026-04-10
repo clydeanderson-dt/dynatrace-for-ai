@@ -1,4 +1,5 @@
 ---
+agent: agent
 description: Respond to an active production incident. Retrieves all active Davis Problems, explains root cause in plain English, surfaces user impact and affected traces, prioritizes by business severity, and generates a shareable incident report.
 ---
 
@@ -14,7 +15,3 @@ We have a production incident. Help me investigate:
 
 Work through this systematically using Dynatrace.
 Be thorough but concise - this is an active incident.
-
----
-
-**Related skills:** dt-dql-essentials, dt-obs-problems, dt-obs-tracing, dt-obs-logs

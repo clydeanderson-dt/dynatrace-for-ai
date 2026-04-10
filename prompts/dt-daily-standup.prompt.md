@@ -1,7 +1,10 @@
 ---
+agent: agent
 description: Generate a daily standup report for one or more services.
+argument-hint: Optional list of services to include in the report
 ---
-Generate a daily standup report for my services: [service-1, service-2, service-3].
+Generate a daily standup report for my services.
+If no specific services are provided, infer from current workspace and ask user to confirm.
 
 For each service:
 1. Health status (healthy/degraded/critical)
@@ -12,7 +15,3 @@ For each service:
 
 Format as concise bullet points I can share with my team.
 Use Dynatrace to gather all metrics.
-
----
-
-**Related skills:** dt-dql-essentials, dt-obs-services, dt-obs-problems
