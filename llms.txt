@@ -46,6 +46,9 @@ Observability:
 - dt-obs-aws: AWS EC2, RDS, Lambda, ECS/EKS, VPC, cost optimization.
 - dt-obs-logs: Log queries, filtering, pattern analysis, correlation.
 - dt-obs-problems: Problem entities, root cause, impact assessment.
+
+Optimization:
+- dt-optimize-logs: Log ingestion, storage, and query cost analysis. Bucket configuration, retention settings, query behavior, and cost reduction recommendations.
 Dynatrace Apps:
 - dt-app-dashboards: Dashboard JSON, tiles, layouts, DQL queries, variables.
 - dt-app-notebooks: Notebook JSON, sections, analytics workflows.
