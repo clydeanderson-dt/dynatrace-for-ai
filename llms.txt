@@ -49,6 +49,7 @@ Observability:
 
 Optimization:
 - dt-optimize-logs: Log ingestion, storage, and query cost analysis. Bucket configuration, retention settings, query behavior, and cost reduction recommendations.
+
 Dynatrace Apps:
 - dt-app-dashboards: Dashboard JSON, tiles, layouts, DQL queries, variables.
 - dt-app-notebooks: Notebook JSON, sections, analytics workflows.

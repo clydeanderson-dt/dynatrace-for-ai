@@ -69,6 +69,13 @@ The **[Dynatrace MCP server](https://docs.dynatrace.com/docs/shortlink/dynatrace
 | [dt-obs-aws](skills/dt-obs-aws/SKILL.md) | AWS resources: EC2, RDS, Lambda, ECS/EKS, VPC, load balancers, and cost optimization. |
 | [dt-obs-logs](skills/dt-obs-logs/SKILL.md) | Log queries, filtering, pattern analysis, and log correlation. |
 | [dt-obs-problems](skills/dt-obs-problems/SKILL.md) | Problem entities, root cause analysis, impact assessment, and problem correlation. |
+
+### Optimization
+
+| Skill | Description |
+|-------|-------------|
+| [dt-optimize-logs](skills/dt-optimize-logs/SKILL.md) | Analyze log ingestion, storage, and query costs. Bucket configuration, retention settings, query behavior, and cost reduction recommendations. |
+
 ### Platform
 
 | Skill | Description |
